@@ -6,13 +6,16 @@ const ModuleFederationPlugin =
 const { override, babelInclude } = require("customize-cra");
 
 module.exports = function (config, env) {
+  console.log(env)
   config.plugins.push(
     new ModuleFederationPlugin(
       (module.exports = {
         name: "remote",
         remotes: {
-          host: env.mode !== 'development'? 
-          `host@http://localhost:3000/remoteEntry.js` : `host@https://recoilhost.vercel.app/`
+          host: 
+          //env.mode === 'development'? 
+          //'host@http://localhost:3000/remoteEntry.js'
+          `host@https://recoilhost.vercel.app/remoteEntry.js`
         },
         exposes: {
           "./Card": "./src/components/Card",
@@ -27,6 +30,10 @@ module.exports = function (config, env) {
           "react-dom": {
             singleton: true,
             requiredVersion: dependencies["react-dom"],
+          },
+          "recoil": {
+            singleton: true,
+            requiredVersion: dependencies["recoil"],
           },
         },
       })
