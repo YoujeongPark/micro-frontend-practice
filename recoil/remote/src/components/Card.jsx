@@ -10,6 +10,7 @@ export const Card = () => {
       data-e2e="REMOTE_COMPONENT_INFO"
     >
       <Counter/>
+      Test
       This is a component from the remote application
     </div>
   )
