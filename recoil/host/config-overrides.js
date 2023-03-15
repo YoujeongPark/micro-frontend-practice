@@ -4,6 +4,7 @@ const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 
 const { override, babelInclude } = require("customize-cra");
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = function (config, env) {
   console.log(env)
@@ -13,8 +14,8 @@ module.exports = function (config, env) {
         name: "host",
         remotes: {
           remote: 
-          //env.mode === 'development'? 
-          //'remote@http://localhost:3001/remoteEntry.js' 
+          isDevelopment? 
+          'remote@http://localhost:3001/remoteEntry.js' :
           'remote@https://recoilremote.vercel.app/remoteEntry.js'
         },
         exposes: {
