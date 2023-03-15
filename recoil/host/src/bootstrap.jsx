@@ -4,9 +4,7 @@ import App from "./App";
 import "./index.css";
 import { RecoilRoot } from 'recoil';
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot( document.getElementById("root"));
 root.render(
   <RecoilRoot>
     <React.StrictMode>
