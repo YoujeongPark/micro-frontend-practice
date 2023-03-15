@@ -11,8 +11,8 @@ module.exports = function (config, env) {
       (module.exports = {
         name: "remote",
         remotes: {
-          host: env.mode !== 'development'? `https://recoilhost.vercel.app/` : 
-          `host@http://localhost:3000/remoteEntry.js`,
+          host: env.mode !== 'development'? 
+          `host@http://localhost:3000/remoteEntry.js` : `host@https://recoilhost.vercel.app/`
         },
         exposes: {
           "./Card": "./src/components/Card",

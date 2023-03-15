@@ -11,8 +11,8 @@ module.exports = function (config, env) {
       (module.exports = {
         name: "host",
         remotes: {
-          remote: env.mode !== 'development'? `https://recoilremote.vercel.app/` : 
-          `remote@http://localhost:3001/remoteEntry.js`,
+          remote: env.mode !== 'development'? 
+          'remote@http://localhost:3001/remoteEntry.js' : 'remote@https://recoilremote.vercel.app/'
         },
         exposes: {
           "./atoms": "./src/store/atoms",
