@@ -11,7 +11,7 @@ module.exports = function (config, env) {
       (module.exports = {
         name: "host",
         remotes: {
-          remote: env.mode === 'development'? `https://recoilremote.vercel.app/` : 
+          remote: env.mode !== 'development'? `https://recoilremote.vercel.app/` : 
           `remote@http://localhost:3001/remoteEntry.js`,
         },
         exposes: {
