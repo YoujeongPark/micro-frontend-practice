@@ -28,10 +28,6 @@ module.exports = function (config, env) {
             singleton: true,
             requiredVersion: dependencies["react-dom"],
           },
-          "recoil": {
-            singleton: true,
-            requiredVersion: dependencies["recoil"],
-          },
         },
       })
     )
